@@ -4,6 +4,16 @@ _ng_xmsgs
 xlnx_auto_0_xdb
 xst
 iseconfig
+isim
+usage_statistics_webtalk.html
+webtalk.log
+webtalk_pn.xml
+fuse.log
+fuse.xmsgs
+fuseRelaunch.cmd
+isim.cmd
+isim.log
+xilinxsim.ini
 *_bitgen.xwbt
 *_guide.ncd
 *_summary.html
@@ -43,6 +53,5 @@ iseconfig
 *_summary.xml
 *_usage.xml
 *_xst.xrpt
-usage_statistics_webtalk.html
-webtalk.log
-webtalk_pn.xml
+*_isim_beh.exe
+*_isim_beh.wdb

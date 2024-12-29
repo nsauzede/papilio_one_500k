@@ -36,6 +36,7 @@ NET "W1B<0>" LOC = "P85" ;
 NET "W1B<1>" LOC = "P83" ;	
 NET "W1B<2>" LOC = "P78" ;	
 NET "W1B<3>" LOC = "P71" ;	
+NET "W1B<3>" CLOCK_DEDICATED_ROUTE = FALSE; # horrible hack - remove when counter clock is correctly fed by a clock signal
 NET "W1B<4>" LOC = "P68" ;	
 NET "W1B<5>" LOC = "P66" ;	
 NET "W1B<6>" LOC = "P63" ;	
