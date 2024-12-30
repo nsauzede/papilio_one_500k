@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="/mnt/huge/lenovo/nico/perso/git/papilio_one_500k/prj_uart/aaatop_tb_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="aaatop_tb" />
+            <top_module name="glbl" />
+            <top_module name="numeric_std" />
+            <top_module name="std_logic_1164" />
+            <top_module name="vl_types" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="20" />
+   <wvobject fp_name="/aaatop_tb/rx" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rx</obj_property>
+      <obj_property name="ObjectShortName">rx</obj_property>
+   </wvobject>
+   <wvobject fp_name="/aaatop_tb/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/aaatop_tb/tx" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">tx</obj_property>
+      <obj_property name="ObjectShortName">tx</obj_property>
+   </wvobject>
+   <wvobject fp_name="/aaatop_tb/w1a" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">w1a[15:0]</obj_property>
+      <obj_property name="ObjectShortName">w1a[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/aaatop_tb/w1b" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">w1b[15:0]</obj_property>
+      <obj_property name="ObjectShortName">w1b[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/aaatop_tb/w2c" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">w2c[15:0]</obj_property>
+      <obj_property name="ObjectShortName">w2c[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/aaatop_tb/buttons" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">buttons[3:0]</obj_property>
+      <obj_property name="ObjectShortName">buttons[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/aaatop_tb/clk_period" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">clk_period</obj_property>
+      <obj_property name="ObjectShortName">clk_period</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider9" type="divider">
+      <obj_property name="label">----------------</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/aaatop_tb/uut/nreset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">nreset</obj_property>
+      <obj_property name="ObjectShortName">nreset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/aaatop_tb/uut/uart_valid" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">uart_valid</obj_property>
+      <obj_property name="ObjectShortName">uart_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/aaatop_tb/uut/uart_ready" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">uart_ready</obj_property>
+      <obj_property name="ObjectShortName">uart_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/aaatop_tb/uut/uart_data" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">uart_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">uart_data[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/aaatop_tb/uut/mem_addr" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">mem_addr[16:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_addr[16:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/aaatop_tb/uut/mem_data" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">mem_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_data[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/aaatop_tb/uut/mem_read" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">mem_read</obj_property>
+      <obj_property name="ObjectShortName">mem_read</obj_property>
+   </wvobject>
+   <wvobject fp_name="/aaatop_tb/uut/mem_waitrequest" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">mem_waitrequest</obj_property>
+      <obj_property name="ObjectShortName">mem_waitrequest</obj_property>
+   </wvobject>
+   <wvobject fp_name="/aaatop_tb/uut/mem_readdatavalid" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">mem_readdatavalid</obj_property>
+      <obj_property name="ObjectShortName">mem_readdatavalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider19" type="divider">
+      <obj_property name="label">--------------</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/aaatop_tb/uut/fake_flash/read_addr" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">read_addr[16:0]</obj_property>
+      <obj_property name="ObjectShortName">read_addr[16:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+</wave_config>
