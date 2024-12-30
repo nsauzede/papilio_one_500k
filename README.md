@@ -1,6 +1,39 @@
 # Papilio One 500k Projects
 
 Papilio One 500k is based on Xilinx FPGA: xc3s500e-4-vq100
+- 20 x 18Kbit BRAM blocks
+- 360Kbit Max SRAM (45KByte)
+- 320Kbit Usable SRAM (40KByte)
+
+Fully Assembled with a Xilinx XC3S500E and 4Mbit SPI Flash Memory
+Provides an Easy Introduction to FPGA, Digital Electronics, and System on a Chip design
+Easily add New Functionality with Wings that Snap onto the Board
+Two-Channel USB Connection for JTAG and Serial Communications
+Four Independent Power Rails at 5V, 3.3V, 2.5V, and 1.2V
+Power Supplied by a Power Connector or USB
+Input Voltage (recommended): 6.5-15V
+48 I/O lines!
+
+Check out those related resources:
+- https://github.com/nsauzede/papilio_pins
+- https://github.com/nsauzede/Papilio-Loader
+- https://github.com/nsauzede/cpu86
+- https://github.com/nsauzede/benchy_sump_p1_jtag
+
+Pins:
+```
+## SPI flash
+NET "SPI_CS"   LOC = "P24" | IOSTANDARD = LVCMOS33 | SLEW = SLOW | DRIVE = 8;
+NET "SPI_SCK"  LOC = "P50" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+NET "SPI_MISO" LOC = "P44" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+NET "SPI_MOSI" LOC = "P27" | IOSTANDARD = LVCMOS33 ;
+
+## JTAG
+NET "JTAG_TMS" LOC = "P75"  | IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST ;
+NET "JTAG_TCK" LOC = "P77"  | IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST ;
+NET "JTAG_TDI" LOC = "P100" | IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST ;
+NET "JTAG_TDO" LOC = "P76"  | IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST ;
+```
 
 ## How to program FPGA on linux:
 - install ISE 14.7 and build the bitstream (*.bit):
