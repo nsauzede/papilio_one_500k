@@ -35,6 +35,14 @@ NET "JTAG_TDI" LOC = "P100" | IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST ;
 NET "JTAG_TDO" LOC = "P76"  | IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST ;
 ```
 
+JTAG:
+Papilio JTAG header:
+TMS TDI TDO TCK GND REF
+
+FTDI RED HW417A HEADER: (upside-down, pointing up)
+GND CTS VCC TXD RXD DTR
+    V       G   W   B
+    
 ## How to program FPGA on linux:
 - install ISE 14.7 and build the bitstream (*.bit):
 -- https://www.xilinx.com/member/forms/download/xef.html?filename=Xilinx_ISE_DS_Lin_14.7_1015_1.tar
