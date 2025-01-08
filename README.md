@@ -49,6 +49,10 @@ GND CTS VCC TXD RXD DTR
 - clone https://github.com/nsauzede/Papilio-Loader.git branch f-ns-fix
 - on Archlinux, install:
 -- pacman -S ftdi libusb-compat
+- on other Unix system maybe build from source ?
+-- https://www.intra2net.com/en/developer/libftdi/index.php
+-- https://libusb.info/         # WARNING => requires C11 !!!
+-- https://github.com/libconfuse/libconfuse
 
 Program FPGA RAM (temporary):
 sudo <papilio-prog>/papilio-prog -f aaatop.bit
