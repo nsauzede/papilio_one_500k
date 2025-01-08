@@ -51,6 +51,25 @@ port(
 		  tx: out std_logic
 );
 end component;
+component uart_rx
+generic(
+	clk_freq: integer := 32000000;
+	baud_rate: integer := 115200
+);
+port(
+		  nreset: in std_logic;
+		  clk: in std_logic;
+
+		  rx_valid: out std_logic;
+		  rx_ready: in std_logic;
+		  rx_data: out std_logic_vector(7 downto 0);
+
+		  cmax_o: out std_logic_vector(7 downto 0);
+		  voted_o: out std_logic;
+
+		  rx: in std_logic
+);
+end component;
 component uart_mem_dump                           
 	 port(                                              
 		  clk: in std_logic;
@@ -105,6 +124,13 @@ signal count: UNSIGNED(31 downto 0) := (others => '0');
 	signal mem_read: std_logic := '0';
 	signal mem_waitrequest: std_logic := '0';
 	signal mem_readdatavalid: std_logic := '0';
+
+signal rd        : std_logic := '0';
+signal wr        : std_logic := '0';
+signal be        : std_logic_vector(3 downto 0) := (others => '0');
+signal datai     : std_logic_vector(31 downto 0) := (others => '0');
+signal datao     : std_logic_vector(31 downto 0) := (others => '0');
+signal irq       : std_logic := '0';
 begin
 	butled1: entity work.wingbutled
 	Port map (
@@ -112,12 +138,12 @@ begin
 			 buttons => buttons,
 			 leds => leds
 	);
-	counter1: entity work.counter
-	Port map( clock => clock,
-		  reset => reset,
-		  enable => enable,
-		  counter_out => leds
-	);
+--	counter1: entity work.counter
+--	Port map( clock => clock,
+--		  reset => reset,
+--		  enable => enable,
+--		  counter_out => leds
+--	);
 	reset <= buttons(0);
 	enable <= buttons(1);
 	clock <= buttons(2) or count(19);
@@ -126,15 +152,21 @@ begin
         if reset = '1' then
             count <= (others => '0');
         elsif rising_edge(clk) then
-            count <= count + 1;
+				if count = 0 then
+					count <= to_unsigned(32000000, 32);
+				else
+					count <= count - 1;
+				end if;
         end if;
     end process;
+--	 leds <= (others => '1') when count < to_unsigned(32000000 / 2, 32) else (others => '0');
 	 w1a(0) <= count(17);
 	 w1a(1) <= count(18);
 	 w1a(2) <= count(19);
 	 w1a(3) <= count(20);
 
 	nreset <= not buttons(3);
+	--tx <= rx;
 	uart_tx1: uart_tx
 	Port map(
 		nreset => nreset,
@@ -146,47 +178,56 @@ begin
 		
 		tx => tx
 	);
-
-	uart_mem_dump1: uart_mem_dump
+	leds <= uart_data(3 downto 0);
+	uart_rx1: uart_rx
+	generic map(
+		clk_freq => 32000000,
+		baud_rate => 115200		
+	)
 	Port map(
-		clk => clk,
 		nreset => nreset,
+		clk => clk,
 		
-		mem_addr => mem_addr,
-		mem_data => mem_data,
+		rx_valid => uart_valid,
+		rx_ready => uart_ready,
+		rx_data => uart_data,
 		
-		mem_read => mem_read,	-- Read request
-		mem_waitrequest => mem_waitrequest,
-		mem_readdatavalid => mem_readdatavalid,
-		
-		uart_data => uart_data,
-		uart_valid => uart_valid,
-		uart_ready => uart_ready
+		rx => rx
 	);
---	mem_readdatavalid <= count(3);
---	mem_readdatavalid <= '1';
---	mem_waitrequest <= count(3);
---	mem_waitrequest <= count(2);
---	mem_waitrequest <= '0';
---	mem_data <= std_logic_vector(count);
-	--mem_data <= x"deadbeef";
-        fake_flash : my_onchip_flash
-                port map (
-                        clock                   => clk,                   --    clk.clk
-                        avmm_csr_addr           => '0',           --    csr.address
-                        avmm_csr_read           => '0',           --       .read
-                        avmm_csr_writedata      => x"EEEEEEEE",      --       .writedata
-                        avmm_csr_write          => '0',          --       .write
-                        avmm_csr_readdata       => open,       --       .readdata
-                        avmm_data_addr          => mem_addr,          --   data.address
-                        avmm_data_read          => mem_read,          --       .read
-                        avmm_data_writedata     => x"EEEEEEEE",     --       .writedata
-                        avmm_data_write         => '0',         --       .write
-                        avmm_data_readdata      => mem_data,      --       .readdata
-                        avmm_data_waitrequest   => mem_waitrequest,   --       .waitrequest
-                        avmm_data_readdatavalid => mem_readdatavalid, --       .readdatavalid
-                        avmm_data_burstcount    => "01",    --       .burstcount
-                        reset_n                 => nreset                  -- nreset.reset_n
-                );
+
+--	uart_mem_dump1: uart_mem_dump
+--	Port map(
+--		clk => clk,
+--		nreset => nreset,
+--		
+--		mem_addr => mem_addr,
+--		mem_data => mem_data,
+--		
+--		mem_read => mem_read,	-- Read request
+--		mem_waitrequest => mem_waitrequest,
+--		mem_readdatavalid => mem_readdatavalid,
+--		
+--		uart_data => uart_data,
+--		uart_valid => uart_valid,
+--		uart_ready => uart_ready
+--	);
+--        fake_flash : my_onchip_flash
+--                port map (
+--                        clock                   => clk,                   --    clk.clk
+--                        avmm_csr_addr           => '0',           --    csr.address
+--                        avmm_csr_read           => '0',           --       .read
+--                        avmm_csr_writedata      => x"EEEEEEEE",      --       .writedata
+--                        avmm_csr_write          => '0',          --       .write
+--                        avmm_csr_readdata       => open,       --       .readdata
+--                        avmm_data_addr          => mem_addr,          --   data.address
+--                        avmm_data_read          => mem_read,          --       .read
+--                        avmm_data_writedata     => x"EEEEEEEE",     --       .writedata
+--                        avmm_data_write         => '0',         --       .write
+--                        avmm_data_readdata      => mem_data,      --       .readdata
+--                        avmm_data_waitrequest   => mem_waitrequest,   --       .waitrequest
+--                        avmm_data_readdatavalid => mem_readdatavalid, --       .readdatavalid
+--                        avmm_data_burstcount    => "01",    --       .burstcount
+--                        reset_n                 => nreset                  -- nreset.reset_n
+--                );
 
 end Behavioral;
