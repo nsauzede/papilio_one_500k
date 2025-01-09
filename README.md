@@ -48,7 +48,7 @@ GND CTS VCC TXD RXD DTR
 -- https://www.xilinx.com/member/forms/download/xef.html?filename=Xilinx_ISE_DS_Lin_14.7_1015_1.tar
 - clone https://github.com/nsauzede/Papilio-Loader.git branch f-ns-fix
 - on Archlinux, install:
--- pacman -S ftdi libusb-compat
+-- pacman -S libftdi-compat libusb-compat
 - on other Unix system maybe build from source ?
 -- https://www.intra2net.com/en/developer/libftdi/index.php
 -- https://libusb.info/         # WARNING => requires C11 !!!
@@ -80,3 +80,6 @@ One (nasty) workaround is to create "/usr/bin/gcc4" symlink to some "/usr/bin/gc
 ```
 Don't forget to manually patch Xilinx/14.7/ISE_DS/ISE/data/include/{xsi.h, ieee_accel.h} to remove the "//" C++-style comments
 because they are unsupported by "-std=c90".
+
+## How to generically infer BRAM from initial contents
+Eg: On Xilinx see xst_v6s6.pdf page 221

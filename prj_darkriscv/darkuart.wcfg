@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="/home/nsauzede/perso/git/papilio_one_500k/prj_darkriscv/darkuart_tb_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="darkuart_tb" />
+            <top_module name="glbl" />
+            <top_module name="std_logic_1164" />
+            <top_module name="vl_types" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="33" />
+   <wvobject fp_name="/darkuart_tb/uut/CLK" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/uut/RES" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">RES</obj_property>
+      <obj_property name="ObjectShortName">RES</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/uut/RD" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">RD</obj_property>
+      <obj_property name="ObjectShortName">RD</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/uut/WR" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">WR</obj_property>
+      <obj_property name="ObjectShortName">WR</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/uut/BE" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">BE[3:0]</obj_property>
+      <obj_property name="ObjectShortName">BE[3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/uut/DATAI" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">DATAI[31:0]</obj_property>
+      <obj_property name="ObjectShortName">DATAI[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/uut/DATAO" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">DATAO[31:0]</obj_property>
+      <obj_property name="ObjectShortName">DATAO[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/uut/IRQ" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">IRQ</obj_property>
+      <obj_property name="ObjectShortName">IRQ</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/uut/RXD" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">RXD</obj_property>
+      <obj_property name="ObjectShortName">RXD</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/uut/TXD" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">TXD</obj_property>
+      <obj_property name="ObjectShortName">TXD</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/uut/ESIMACK" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ESIMACK</obj_property>
+      <obj_property name="ObjectShortName">ESIMACK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/uut/DEBUG" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">DEBUG[3:0]</obj_property>
+      <obj_property name="ObjectShortName">DEBUG[3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/uut/UART_STATE" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">UART_STATE[7:0]</obj_property>
+      <obj_property name="ObjectShortName">UART_STATE[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/uut/ESIMREQ" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ESIMREQ</obj_property>
+      <obj_property name="ObjectShortName">ESIMREQ</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/uut/UART_TIMER" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">UART_TIMER[15:0]</obj_property>
+      <obj_property name="ObjectShortName">UART_TIMER[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/uut/UART_IREQ" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">UART_IREQ</obj_property>
+      <obj_property name="ObjectShortName">UART_IREQ</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/uut/UART_IACK" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">UART_IACK</obj_property>
+      <obj_property name="ObjectShortName">UART_IACK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/uut/UART_XFIFO" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">UART_XFIFO[7:0]</obj_property>
+      <obj_property name="ObjectShortName">UART_XFIFO[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/uut/UART_XREQ" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">UART_XREQ</obj_property>
+      <obj_property name="ObjectShortName">UART_XREQ</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/uut/UART_XACK" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">UART_XACK</obj_property>
+      <obj_property name="ObjectShortName">UART_XACK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/uut/UART_XBAUD" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">UART_XBAUD[15:0]</obj_property>
+      <obj_property name="ObjectShortName">UART_XBAUD[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/uut/UART_XSTATE" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">UART_XSTATE[3:0]</obj_property>
+      <obj_property name="ObjectShortName">UART_XSTATE[3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/uut/UART_RFIFO" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">UART_RFIFO[7:0]</obj_property>
+      <obj_property name="ObjectShortName">UART_RFIFO[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/uut/UART_RREQ" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">UART_RREQ</obj_property>
+      <obj_property name="ObjectShortName">UART_RREQ</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/uut/UART_RACK" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">UART_RACK</obj_property>
+      <obj_property name="ObjectShortName">UART_RACK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/uut/UART_RBAUD" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">UART_RBAUD[15:0]</obj_property>
+      <obj_property name="ObjectShortName">UART_RBAUD[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/uut/UART_RSTATE" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">UART_RSTATE[3:0]</obj_property>
+      <obj_property name="ObjectShortName">UART_RSTATE[3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/uut/UART_RXDFF" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">UART_RXDFF[2:0]</obj_property>
+      <obj_property name="ObjectShortName">UART_RXDFF[2:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/uut/UART_STATEFF" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">UART_STATEFF[7:0]</obj_property>
+      <obj_property name="ObjectShortName">UART_STATEFF[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/uut/DATAOFF" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">DATAOFF[31:0]</obj_property>
+      <obj_property name="ObjectShortName">DATAOFF[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/uut/IOREQ" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">IOREQ[1:0]</obj_property>
+      <obj_property name="ObjectShortName">IOREQ[1:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/uut/IOACK" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">IOACK[1:0]</obj_property>
+      <obj_property name="ObjectShortName">IOACK[1:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/uut/LASTCHAR" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">LASTCHAR[7:0]</obj_property>
+      <obj_property name="ObjectShortName">LASTCHAR[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+</wave_config>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="/home/nsauzede/perso/git/papilio_one_500k/prj_darkriscv/darkuart_tb_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="darkuart_tb" />
+            <top_module name="glbl" />
+            <top_module name="std_logic_1164" />
+            <top_module name="vl_types" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="14" />
+   <wvobject fp_name="/darkuart_tb/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/res" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">res</obj_property>
+      <obj_property name="ObjectShortName">res</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/rd" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rd</obj_property>
+      <obj_property name="ObjectShortName">rd</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/wr" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">wr</obj_property>
+      <obj_property name="ObjectShortName">wr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/be" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">be[3:0]</obj_property>
+      <obj_property name="ObjectShortName">be[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/datai" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">datai[31:0]</obj_property>
+      <obj_property name="ObjectShortName">datai[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/rxd" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rxd</obj_property>
+      <obj_property name="ObjectShortName">rxd</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/esimack" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">esimack</obj_property>
+      <obj_property name="ObjectShortName">esimack</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/datao" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">datao[31:0]</obj_property>
+      <obj_property name="ObjectShortName">datao[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/irq" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">irq</obj_property>
+      <obj_property name="ObjectShortName">irq</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/txd" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">txd</obj_property>
+      <obj_property name="ObjectShortName">txd</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/esimreq" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">esimreq</obj_property>
+      <obj_property name="ObjectShortName">esimreq</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/debug" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">debug[3:0]</obj_property>
+      <obj_property name="ObjectShortName">debug[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/darkuart_tb/clk_period" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">clk_period</obj_property>
+      <obj_property name="ObjectShortName">clk_period</obj_property>
+   </wvobject>
+</wave_config>
