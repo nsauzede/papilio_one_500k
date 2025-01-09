@@ -5,7 +5,7 @@ Papilio One 500k is based on Xilinx FPGA: xc3s500e-4-vq100
 - 360Kbit Max SRAM (45KByte)
 - 320Kbit Usable SRAM (40KByte)
 
-Fully Assembled with a Xilinx XC3S500E and 4Mbit SPI Flash Memory
+Fully Assembled with a Xilinx XC3S500E and 4Mbit SPI Flash Memory (SST SST25VF040B)
 Provides an Easy Introduction to FPGA, Digital Electronics, and System on a Chip design
 Easily add New Functionality with Wings that Snap onto the Board
 Two-Channel USB Connection for JTAG and Serial Communications
@@ -59,6 +59,14 @@ sudo <papilio-prog>/papilio-prog -f aaatop.bit
 
 Program FPGA SPI Flash (permanent):
 sudo <papilio-prog>/papilio-prog -f aaatop.bit -b <papilio-prog>/bscan_spi_xc3s500e.bit
+=>
+Using built-in device list
+JTAG chainpos: 0 Device IDCODE = 0x41c22093     Desc: XC3S500E
+
+Uploading "<Papilio-Loader>/papilio-prog/bscan_spi_xc3s500e.bit".
+Programming External Flash Memory with "aaatop.bit".
+Found SST Flash (Pages=2048, Page Size=264 bytes, 4325376 bits).
+Finished Programming
 
 ## How to simulate with ISIM
 If ISIM compiler fails because of "error: implicit declaration of function XXX"

@@ -39,46 +39,10 @@ entity aaatop is
 end aaatop;
 
 architecture Behavioral of aaatop is
-component uart_tx
-port(
-		  nreset: in std_logic;
-		  clk: in std_logic;
-
-		  tx_valid: in std_logic;
-		  tx_ready: out std_logic;
-		  tx_data: in std_logic_vector(7 downto 0);
-
-		  tx: out std_logic
-);
-end component;
-component uart_rx
-generic(
-	clk_freq: integer := 32000000;
-	baud_rate: integer := 115200
-);
-port(
-		  nreset: in std_logic;
-		  clk: in std_logic;
-
-		  rx_valid: out std_logic;
-		  rx_ready: in std_logic;
-		  rx_data: out std_logic_vector(7 downto 0);
-
-		  cmax_o: out std_logic_vector(7 downto 0);
-		  voted_o: out std_logic;
-
-		  rx: in std_logic
-);
-end component;
-
 signal buttons : STD_LOGIC_VECTOR (3 downto 0);
 signal leds : STD_LOGIC_VECTOR (3 downto 0);
-
-signal nreset: std_logic := '1';
-signal uart_valid: std_logic := '0';
-signal uart_ready: std_logic := '0';
-signal uart_data: std_logic_vector(7 downto 0) := (others => '0');
-
+signal reset: std_logic := '0';
+signal count: UNSIGNED(31 downto 0) := (others => '0');
 begin
 	butled1: entity work.wingbutled
 	Port map (
@@ -86,32 +50,19 @@ begin
 			 buttons => buttons,
 			 leds => leds
 	);
-	nreset <= not buttons(3);
-	uart_tx1: uart_tx
-	Port map(
-		nreset => nreset,
-		clk => clk,
-		
-		tx_valid => uart_valid,
-		tx_ready => uart_ready,
-		tx_data => uart_data,
-		
-		tx => tx
-	);
-	leds <= uart_data(3 downto 0);
-	uart_rx1: uart_rx
-	generic map(
-		clk_freq => 32000000,
-		baud_rate => 115200		
-	)
-	Port map(
-		nreset => nreset,
-		clk => clk,
-		
-		rx_valid => uart_valid,
-		rx_ready => uart_ready,
-		rx_data => uart_data,
-		
-		rx => rx
-	);
+	reset <= buttons(0);
+	tx <= rx;
+   leds <= (others => '1') when count < to_unsigned(32000000 / 2, 32) else (others => '0');
+	process(clk,reset)
+	begin
+		if reset = '1' then
+			count <= (others => '0');
+		elsif rising_edge(clk) then
+			if count = 0 then
+				count <= to_unsigned(32000000, 32);
+			else
+				count <= count - 1;
+			end if;
+		end if;
+	end process;
 end Behavioral;
