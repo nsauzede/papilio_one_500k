@@ -29,9 +29,9 @@
  */
 
 `timescale 1ns / 1ps
-`include "../rtl/config.vh"
+`include "../darkriscv/rtl/config.vh"
 
-module darkram
+module darkram #(parameter INIT_FILE  = "memory_init.mem")
 (
     input           CLK,    // clock
     input           RES,    // reset
@@ -56,7 +56,9 @@ module darkram
 
     // ro/rw memories
 
-    reg [31:0] MEM [0:2**`MLEN/4-1]; // ro memory
+    //reg [31:0] MEM [0:2**`MLEN/4-1]; // ro memory
+//	 reg [31:0] MEM [(2**`MLEN)-1:0];
+	 reg [31:0] MEM [0:(2**`MLEN)-1];
 
     // memory initialization
 
@@ -81,13 +83,15 @@ module darkram
      // workaround for vivado: no path in simulation and .mem extension
 
     `ifdef XILINX_SIMULATOR
-        $readmemh("darksocv.mem",MEM);e r1
+        $readmemh(INIT_FILE, MEM);e r1
 	`elsif MODEL_TECH
-	    $readmemh("../../../../src/darksocv.mem",MEM);e r2
+	    $readmemh(INIT_FILE, MEM);e r2
     `else
-//        $readmemh("../src/darksocv.mem",MEM, 0, 2**`MLEN/4-1);
-//        $readmemh("../src/darksocv.mem",MEM);
-//        $readmemh("darksocv.mem",MEM, 0);
+        $display("calling $readmemh..",);
+		  //$readmemh(INIT_FILE, MEM, 0, (2**`MLEN)/4-1);//e r3
+//		  $readmemh(INIT_FILE, MEM);//e r3
+		  $readmemh(INIT_FILE, MEM, (2**`MLEN)-1, 0);
+//		  $readmemh(INIT_FILE, MEM, 0, (2**`MLEN)-1);
 	 `endif
     end
 
