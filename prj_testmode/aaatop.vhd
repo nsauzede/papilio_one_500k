@@ -53,6 +53,7 @@ begin
 	reset <= buttons(0);
 	tx <= rx;
    leds <= (others => '1') when count < to_unsigned(32000000 / 2, 32) else (others => '0');
+--   leds <= "1100" when count < to_unsigned(32000000 / 2, 32) else (others => '0');
 	process(clk,reset)
 	begin
 		if reset = '1' then

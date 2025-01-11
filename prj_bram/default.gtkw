@@ -1,0 +1,35 @@
+[*]
+[*] GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
+[*] Mon Jan 13 19:10:00 2025
+[*]
+[dumpfile] "/home/nsauzede/perso/git/papilio_one_500k/prj_bram/top.vcd"
+[dumpfile_mtime] "Mon Jan 13 15:56:15 2025"
+[dumpfile_size] 70163
+[savefile] "/home/nsauzede/perso/git/papilio_one_500k/prj_bram/default.gtkw"
+[timestart] 0
+[size] 2552 600
+[pos] -195 317
+*-14.334369 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top_tb.
+[treeopen] top_tb.top1.
+[treeopen] top_tb.top1.dut1.
+[sst_width] 276
+[signals_width] 118
+[sst_expanded] 1
+[sst_vpaned_height] 157
+@22
+top_tb.top1.dut1.addr[12:0]
+@28
+top_tb.top1.dut1.clk
+@22
+top_tb.top1.dut1.count[31:0]
+top_tb.top1.dut1.din[31:0]
+#{top_tb.top1.dut1.dout[31:0]} top_tb.top1.dut1.dout[31] top_tb.top1.dut1.dout[30] top_tb.top1.dut1.dout[29] top_tb.top1.dut1.dout[28] top_tb.top1.dut1.dout[27] top_tb.top1.dut1.dout[26] top_tb.top1.dut1.dout[25] top_tb.top1.dut1.dout[24] top_tb.top1.dut1.dout[23] top_tb.top1.dut1.dout[22] top_tb.top1.dut1.dout[21] top_tb.top1.dut1.dout[20] top_tb.top1.dut1.dout[19] top_tb.top1.dut1.dout[18] top_tb.top1.dut1.dout[17] top_tb.top1.dut1.dout[16] top_tb.top1.dut1.dout[15] top_tb.top1.dut1.dout[14] top_tb.top1.dut1.dout[13] top_tb.top1.dut1.dout[12] top_tb.top1.dut1.dout[11] top_tb.top1.dut1.dout[10] top_tb.top1.dut1.dout[9] top_tb.top1.dut1.dout[8] top_tb.top1.dut1.dout[7] top_tb.top1.dut1.dout[6] top_tb.top1.dut1.dout[5] top_tb.top1.dut1.dout[4] top_tb.top1.dut1.dout[3] top_tb.top1.dut1.dout[2] top_tb.top1.dut1.dout[1] top_tb.top1.dut1.dout[0]
+#{top_tb.top1.dut1.leds[3:0]} top_tb.top1.dut1.leds[3] top_tb.top1.dut1.leds[2] top_tb.top1.dut1.leds[1] top_tb.top1.dut1.leds[0]
+@28
+top_tb.top1.dut1.reset
+top_tb.top1.dut1.rx
+top_tb.top1.dut1.tx
+top_tb.top1.dut1.we
+[pattern_trace] 1
+[pattern_trace] 0

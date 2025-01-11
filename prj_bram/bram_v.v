@@ -16,7 +16,7 @@ module bram_with_init_v #(
 
     // Initialize the RAM from the memory file
     initial begin
-        $readmemh(INIT_FILE, ram);  // Use $readmemh for hex format, or $readmemb for binary format
+        $readmemh(INIT_FILE, ram, 0, (2**ADDR_WIDTH)-1);  // Use $readmemh for hex format, or $readmemb for binary format
     end
 
     // Synchronous RAM operations: Write and Read

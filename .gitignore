@@ -55,3 +55,5 @@ xilinxsim.ini
 *_xst.xrpt
 *_isim_beh.exe
 *_isim_beh.wdb
+*.output
+*.vcd
