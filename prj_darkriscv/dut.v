@@ -19,7 +19,7 @@ module aaatop #( parameter integer SHIFT = 23) // Counter shift to increment the
 	 wire IDACK;
     wire [31:0] XATAO;
 	 wire XDACK;
-	 localparam INIT_FILE = "../darkriscv/src/darksocv_padded.mem";
+	 localparam INIT_FILE = "../darkriscv/src/darksocv_padded.hex";
 
     darkram #(.INIT_FILE(INIT_FILE)) u_bram (
         .CLK    (clk),            
