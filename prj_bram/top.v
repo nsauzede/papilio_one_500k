@@ -1,7 +1,7 @@
 module top #(
     parameter integer SHIFT = 23, // Counter shift to increment the address
     parameter integer BOARD_CK = 32000000,
-    parameter INIT_FILE = "../darkriscv/src/darksocv_padded.mem"
+    parameter INIT_FILE = "../darkriscv/src/darksocv_padded.hex"
 ) (
     input rx,
     output tx,
