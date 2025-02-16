@@ -207,8 +207,6 @@
 // The size is defined as 2**MLEN, i.e. the address bits used in the memory.
 // WARNING: this setup must match with the src/darksocv.ld.src file!
 `define MLEN 13 // MEM[14:0] -> 32KBytes LENGTH = 0x8000 for coremark!
-//`define MLEN 4 // MEM[14:0] -> 32KBytes LENGTH = 0x8000 for coremark!
-//`define MLEN 3 // MEM[14:0] -> 32KBytes LENGTH = 0x8000 for coremark!
 
 // read-modify-write cycle:
 //
