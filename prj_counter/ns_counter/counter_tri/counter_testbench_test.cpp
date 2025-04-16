@@ -13,6 +13,7 @@ TESTCASE(TestCounter)
   sc_signal<bool>   reset;
   sc_signal<bool>   enable;
   sc_signal<sc_uint<4> > counter_out;
+  sc_signal<sc_lv<4> > data;
   int i = 0;
   // Connect the DUT
   first_counter counter("COUNTER");
@@ -20,6 +21,7 @@ TESTCASE(TestCounter)
   counter.reset(reset);
   counter.enable(enable);
   counter.counter_out(counter_out);
+  counter.data(data);
 
         std::cout << "Initial sc_time_stamp: " << sc_time_stamp() << "\n";
   sc_start(1, SC_NS);
@@ -31,12 +33,13 @@ TESTCASE(TestCounter)
 
 
   // Open VCD file
-  sc_trace_file *wf = sc_create_vcd_trace_file("counter/test_counter_testbench");
+  sc_trace_file *wf = sc_create_vcd_trace_file("counter_tri/test_counter_testbench");
   // Dump the desired signals
   sc_trace(wf, clock, "clock");
   sc_trace(wf, reset, "reset");
   sc_trace(wf, enable, "enable");
   sc_trace(wf, counter_out, "count");
+  sc_trace(wf, data, "data");
 
   // Initialize all variables
   reset = 0;       // initial value of reset
